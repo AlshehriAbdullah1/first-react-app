@@ -1,13 +1,13 @@
-import logo from './logo.svg';
-import './App.css';
-
+import logo from "./logo.svg";
+import "./App.css";
+import MyFirstComponent from "./MyFirstComponent";
 function App() {
   return (
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
-          Edit <code>src/App.js</code> and save to reload.
+          Edit <code>src/App.js</code> and save to refresh.
         </p>
         <a
           className="App-link"
@@ -17,6 +17,8 @@ function App() {
         >
           Learn React
         </a>
+        <h1> My Name is Abdullah! </h1>
+        <MyFirstComponent />
       </header>
     </div>
   );
