@@ -1,6 +1,7 @@
 import logo from "./logo.svg";
 import "./App.css";
 import MyFirstComponent from "./MyFirstComponent";
+import TextButton from "./TextButton";
 function App() {
   return (
     <div className="App">
@@ -17,8 +18,8 @@ function App() {
         >
           Learn React
         </a>
-        <h1> My Name is Abdullah! </h1>
-        <MyFirstComponent />
+
+        <TextButton />
       </header>
     </div>
   );
