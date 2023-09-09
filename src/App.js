@@ -3,6 +3,7 @@ import "./App.css";
 import MyFirstComponent from "./MyFirstComponent";
 import TextButton from "./TextButton";
 import MyInput from "./MyInput";
+import MyForm from "./MyForm";
 function App() {
   return (
     <div className="App">
@@ -21,7 +22,8 @@ function App() {
         </a>
 
         <TextButton />
-        <MyInput />
+        {/* <MyInput /> */}
+        <MyForm />
       </header>
     </div>
   );
