@@ -2,6 +2,7 @@ import logo from "./logo.svg";
 import "./App.css";
 import MyFirstComponent from "./MyFirstComponent";
 import TextButton from "./TextButton";
+import MyInput from "./MyInput";
 function App() {
   return (
     <div className="App">
@@ -20,6 +21,7 @@ function App() {
         </a>
 
         <TextButton />
+        <MyInput />
       </header>
     </div>
   );
