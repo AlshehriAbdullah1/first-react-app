@@ -5,6 +5,8 @@ export default function MyForm() {
     name: "ff",
     email: "test@mail.com",
     generalInfo: "general info",
+    country: "",
+    status: "",
   });
 
   function handleNameChange(event) {
@@ -26,13 +28,39 @@ export default function MyForm() {
       <form>
         <label>Name:</label>
         <input value={bodyParam.name} onChange={handleNameChange} />
-
         <hr></hr>
-
         <label>Email:</label>
         <input value={bodyParam.email} onChange={handleEmailChange} />
         <hr></hr>
+        <p>Your nationality</p>
+        <select
+          value={bodyParam.country}
+          onChange={(e) =>
+            setbodyParam({ ...bodyParam, country: e.target.value })
+          }
+        >
+          <option selected>Select your country</option>
+          <option>KSA</option>
+          <option>Egypt</option>
+          <option>Qatar</option>
+        </select>
+        <hr></hr>
 
+        <div>
+          <input
+            type="radio"
+            checked={bodyParam.status == "Student"}
+            onClick={(e) => setbodyParam({ ...bodyParam, status: "Student" })}
+          />
+          Student
+          <input
+            type="radio"
+            checked={bodyParam.status == "Teacher"}
+            onClick={(e) => setbodyParam({ ...bodyParam, status: "Teacher" })}
+          />
+          Teacher
+        </div>
+        <hr></hr>
         <label>General Info</label>
         <textarea onChange={handleGeneralInfoChange}>
           {bodyParam.generalInfo}
