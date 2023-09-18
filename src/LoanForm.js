@@ -1,6 +1,4 @@
 import LoanInput from "./LoanInput";
-import LoanRadio from "./LoanRadio";
-
 export default function LoanForm() {
   function validateInputs(e) {
     e.preventDefault();
