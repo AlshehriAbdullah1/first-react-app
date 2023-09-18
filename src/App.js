@@ -4,26 +4,19 @@ import MyFirstComponent from "./MyFirstComponent";
 import TextButton from "./TextButton";
 import MyInput from "./MyInput";
 import MyForm from "./MyForm";
+import { useState } from "react";
 function App() {
+  const [count, setCount] = useState(0);
+
+  function handlePlusClick() {
+    setCount(count + 1);
+    setCount(count + 2);
+  }
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to refresh.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-
-        <TextButton />
-        {/* <MyInput /> */}
-        <MyForm />
+        <h1>The count is: {count}</h1>
+        <button onClick={handlePlusClick}>+</button>
       </header>
     </div>
   );
