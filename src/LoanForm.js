@@ -99,3 +99,43 @@ export default function LoanForm() {
     </div>
   );
 }
+
+
+// import Heading from './Heading.js';
+import Section from './Section.js';
+import {LevelContext} from './LevelContext.js'
+import Heading from './Heading.js'
+export default function Page() {
+ 
+  return (
+    <LevelContext.provider value={1}> 
+   <Section>
+      <Heading>Title</Heading>
+     <LevelContext.provider value={2}>
+     <Section >
+        <Heading>Heading</Heading>
+        <Heading>Heading</Heading>
+        <Heading>Heading</Heading>
+        <LevelContext.provider value={3}>
+         <Section >
+          <Heading>Sub-heading</Heading>
+          <Heading>Sub-heading</Heading>
+          <Heading>Sub-heading</Heading>
+           <LevelContext.provider value ={4}>
+            <Section >
+            <Heading>Sub-sub-heading</Heading>
+            <Heading>Sub-sub-heading</Heading>
+            <Heading>Sub-sub-heading</Heading>
+          </Section>
+           </LevelContext.provider>
+         
+        </Section>
+        </LevelContext.provider>
+       
+      </Section>
+   
+     </LevelContext.provider>
+       </Section>
+  </LevelContext.provider>
+  );
+}
