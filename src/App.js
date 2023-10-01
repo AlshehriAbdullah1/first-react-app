@@ -8,13 +8,14 @@ function App() {
   return (
     <div className="App">
       <div style={{ fontSize: "30px" }}>
-        <Link to="/home">
+        <Link to={"/home" || "/"}>
           <button style={{ fontSize: "30px" }}>Home</button>
         </Link>
 
         <Link to="/hello">
           <button style={{ fontSize: "30px" }}>Hello</button>
         </Link>
+
         <Link to={"/posts"}>
           <button style={{ fontSize: "30px" }}>Posts</button>
         </Link>
