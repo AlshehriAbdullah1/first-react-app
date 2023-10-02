@@ -1,20 +1,24 @@
+import { Link } from "react-router-dom";
+import { useContext } from "react";
+import { PostsContext } from "./contexts/postsContexts";
 export default function PostsList() {
-  return (
-    <>
-      <div>
-        <h1>Posts Title</h1>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua.
-        </p>
+  console.log("PostsList");
+  const posts = useContext(PostsContext);
+  let postsList = posts.map((post) => {
+    return (
+      <div
+        key={post.id}
+        style={{
+          backgroundColor: "orange",
+          padding: "10px",
+          marginTop: "20px",
+        }}
+      >
+        <Link to={`/postDetails/${post.id}`}>
+          <h1>{post.title}</h1>
+        </Link>
       </div>
-      <div>
-        <h1>Posts Title</h1>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua.
-        </p>
-      </div>
-    </>
-  );
+    );
+  });
+  return <>{postsList}</>;
 }
