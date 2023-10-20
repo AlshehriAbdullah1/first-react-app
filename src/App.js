@@ -1,12 +1,12 @@
-import logo from "./logo.svg";
 import "./App.css";
 import { Routes, Route, Link } from "react-router-dom";
+import createPost from "./createPost";
 import Hello from "./Hello.js";
 import Home from "./Home.js";
 import PostsList from "./PostsList.js";
 import PostDetails from "./PostDetails";
 import { PostsContext } from "./contexts/postsContexts";
-
+import React from "react";
 function App() {
   const postsData = [
     {
@@ -50,13 +50,17 @@ function App() {
           <Link to={"/posts"}>
             <button style={{ fontSize: "30px" }}>Posts</button>
           </Link>
+          <Link to={"/posts/create"}>
+            <button style={{ fontSize: "30px" }}>create post</button>
+          </Link>
         </div>
 
         <Routes>
           <Route path="/hello" element={<Hello />} />
           <Route path="/" element={<Home></Home>} />
           <Route path="/posts" element={<PostsList></PostsList>} />
-          <Route path="/postDetails/:id" element={<PostDetails />} />
+          <Route path="/posts/:id" element={<PostDetails />} />
+          <Route path="/posts/create" element={<createPost></createPost>} />
         </Routes>
       </div>
     </PostsContext.Provider>

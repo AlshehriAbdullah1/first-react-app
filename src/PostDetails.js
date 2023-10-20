@@ -6,6 +6,7 @@ export default function PostDetails({ title, body }) {
   const { id } = useParams();
   console.log(id);
   const post = posts.find((p) => {
+    // eslint-disable-next-line eqeqeq
     return p.id == id;
   });
   return (

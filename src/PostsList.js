@@ -14,7 +14,7 @@ export default function PostsList() {
           marginTop: "20px",
         }}
       >
-        <Link to={`/postDetails/${post.id}`}>
+        <Link to={`/posts/${post.id}`}>
           <h1>{post.title}</h1>
         </Link>
       </div>
