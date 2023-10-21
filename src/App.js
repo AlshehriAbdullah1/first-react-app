@@ -1,8 +1,9 @@
 import "./App.css";
 import { Routes, Route, Link } from "react-router-dom";
-import createPost from "./createPost";
+import CreatePost from "./createPost";
 import Hello from "./Hello.js";
 import Home from "./Home.js";
+import PostLayout from "./PostLayout";
 import PostsList from "./PostsList.js";
 import PostDetails from "./PostDetails";
 import { PostsContext } from "./contexts/postsContexts";
@@ -58,9 +59,12 @@ function App() {
         <Routes>
           <Route path="/hello" element={<Hello />} />
           <Route path="/" element={<Home></Home>} />
-          <Route path="/posts" element={<PostsList></PostsList>} />
-          <Route path="/posts/:id" element={<PostDetails />} />
-          <Route path="/posts/create" element={<createPost></createPost>} />
+          {/* <Route path="/posts" element={<PostsList></PostsList>} /> */}
+          <Route path="/posts" element={<PostLayout></PostLayout>}>
+            <Route path="" element={<PostsList></PostsList>} />
+            <Route path=":id" element={<PostDetails />} />
+            <Route path="create" element={<CreatePost></CreatePost>} />
+          </Route>
         </Routes>
       </div>
     </PostsContext.Provider>

@@ -1,8 +1,8 @@
-function createPost() {
+function CreatePost() {
   return (
     <>
       <h1> create post </h1>
     </>
   );
 }
-export default createPost;
+export default CreatePost;
